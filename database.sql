@@ -1,4 +1,4 @@
-CREATE DATABASE edisbook;
+-- CREATE DATABASE edisbook;
 
 CREATE TABLE todo (
     todo_id SERIAL PRIMARY KEY,
