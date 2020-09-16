@@ -1,0 +1,11 @@
+.editTodo {
+}
+
+button {
+  cursor: pointer;
+}
+
+.editTodo input,
+.editTodo button {
+  margin: 5px;
+}

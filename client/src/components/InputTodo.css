@@ -1,0 +1,14 @@
+.inputTodo input,
+.inputTodo button {
+  margin: 5px;
+}
+
+.input {
+  width: 400px;
+}
+
+form {
+  display: flex;
+  /* margin: 0 auto !important; */
+  justify-content: center;
+}
