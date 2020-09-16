@@ -57,7 +57,7 @@ app.get("/todos", async (req, res) => {
   } catch (error) {
     console.error(error.message);
     console.log("bad");
-    // res.sendStatus(404);
+    res.sendStatus(400);
   }
 });
 
