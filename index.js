@@ -5,6 +5,7 @@ const pool = require("./db");
 const path = require("path");
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
 if (process.env.NODE_ENV === "production") {
@@ -48,7 +49,8 @@ app.post("/todos", async (req, res) => {
 // get all the todo items
 
 app.get("/todos", async (req, res) => {
-  console.log("been to todos");
+  console.log("been to todos1");
+  // alert("bad");
   try {
     const allTodo = await pool.query(`SELECT * FROM todo`);
     res.json(allTodo.rows);
