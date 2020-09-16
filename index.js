@@ -52,9 +52,9 @@ app.get("/todos", async (req, res) => {
   console.log("been to todos1");
 
   try {
-    // const allTodo = await pool.query(`SELECT * FROM todo`);
-    // res.json(allTodo.rows);
-    res.send("uuu");
+    const allTodo = await pool.query(`SELECT * FROM todo`);
+    res.json(allTodo.rows);
+    // res.send("uuu");
   } catch (error) {
     console.error(error.message);
     console.log("bad");
