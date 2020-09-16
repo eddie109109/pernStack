@@ -11,9 +11,10 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "client/build")));
 }
 
-app.get("/", (req, res) => {
-  res.send(200);
-});
+// app.get("/", (req, res) => {
+//   console.log("been to todos1");
+//   res.send(200);
+// });
 
 app.post("/todos", async (req, res) => {
   try {
@@ -47,6 +48,7 @@ app.post("/todos", async (req, res) => {
 // get all the todo items
 
 app.get("/todos", async (req, res) => {
+  console.log("been to todos");
   try {
     const allTodo = await pool.query(`SELECT * FROM todo`);
     res.json(allTodo.rows);
@@ -106,6 +108,7 @@ app.delete("/todos/:id", async (req, res) => {
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build/index.html"));
+  // res.sendFile(path.join(__dirname, "client/public/index.html"));
 });
 
 const port = process.env.PORT || 4000;
