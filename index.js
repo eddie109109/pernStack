@@ -50,12 +50,13 @@ app.post("/todos", async (req, res) => {
 
 app.get("/todos", async (req, res) => {
   console.log("been to todos1");
-  // alert("bad");
+
   try {
     const allTodo = await pool.query(`SELECT * FROM todo`);
     res.json(allTodo.rows);
   } catch (error) {
     console.error(error.message);
+    console.log("bad");
     res.sendStatus(404);
   }
 });
